@@ -1,0 +1,23 @@
+CREATE DATABASE sistema;
+
+CREATE USER 'sistemapessoas'@'localhost' IDENTIFIED BY 'sistema';
+
+GRANT ALL PRIVILEGES ON sistema.* TO 'sistemapessoas'@'localhost';
+
+GRANT ALL PRIVILEGES ON sistema.* TO 'sistemapessoas'@'%' WITH GRANT OPTION;
+
+USE sistema;
+
+CREATE TABLE pessoas (
+	id			INTEGER AUTO_INCREMENT PRIMARY KEY,
+	cpf			TEXT,
+	nome		VARCHAR(20) NOT NULL,
+	email		TEXT
+);
+
+
+INSERT INTO pessoas
+(cpf, nome, email)
+VALUES
+('000011-11', 'Fulano Mengano', 'teste@test.com');
+
