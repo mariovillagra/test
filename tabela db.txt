@@ -2,7 +2,7 @@ CREATE DATABASE sistema;
 
 CREATE USER 'sistemapessoas'@'localhost' IDENTIFIED BY 'sistema';
 
-GRANT ALL PRIVILEGES ON sistema.* TO 'sistemapessoas'@'localhost';
+//GRANT ALL PRIVILEGES ON sistema.* TO 'sistemapessoas'@'localhost';
 
 GRANT ALL PRIVILEGES ON sistema.* TO 'sistemapessoas'@'%' WITH GRANT OPTION;
 
