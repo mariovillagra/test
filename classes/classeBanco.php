@@ -24,7 +24,7 @@ class Banco
         $this->bd->query($sqlGravar);
     }
 
-    public function buscar_pessoas()
+    public function listar_pessoas()
     {
         $sqlBusca = 'SELECT * FROM pessoas';
         $resultado = $this->bd->query($sqlBusca);

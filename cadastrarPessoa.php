@@ -1,9 +1,10 @@
 <?php
 include "config.php";
-include "classes/classePessoa.php";
-include "classes/classeBanco.php";
 
-$banco = new Banco($mysqli);
+include "classes/classeBanco.php";
+include "classes/classePessoa.php";
+
+//$banco = new Banco($mysqli);
 
 $exibir_tabela = true;
 $tem_erros = false;
@@ -17,7 +18,7 @@ function tem_post()
     return false;
 }
 
-$pessoa = new Pessoa();
+$pessoa = new Pessoa($mysqli);
 if (tem_post()) {
 
     if (array_key_exists('cpf', $_POST) && strlen($_POST['cpf']) > 0) {
@@ -41,10 +42,10 @@ if (tem_post()) {
 
 
     if (! $tem_erros) {
-        $banco->gravar_pessoa($pessoa);
+        $pessoa->gravar_pessoa($pessoa);
         header('Location: cadastrarPessoa.php');
         die();
     }
 }
-$banco->buscar_pessoas();
+$pessoa->listar_pessoas();
 include "template.php";

@@ -1,5 +1,7 @@
 <?php
-class Pessoa
+//include "classes/classeBanco.php";
+
+class Pessoa extends Banco
 {
     private $id;
     public  $cpf;

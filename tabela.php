@@ -4,7 +4,7 @@
         <th>Nome</th>
         <th>Email</th>
     </tr>
-    <?php foreach ($banco->buscar_pessoas() as $pessoa) : ?>
+    <?php foreach ($pessoa->listar_pessoas() as $pessoa) : ?>
         <tr>
             <td>
                 <?php echo $pessoa['cpf']; ?>
